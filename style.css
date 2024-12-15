@@ -1,0 +1,741 @@
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("/path-to-font-files/HelveticaNeue.woff2") format("woff2"),
+         url("/path-to-font-files/HelveticaNeue.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+  
+body{
+background:#2c2c2c;
+background-image: url('background_img.jpg'); 
+background-size: cover;
+background-repeat: no-repeat; 
+background-position: center; 
+background-attachment: fixed;
+margin: 0; 
+height: 100%; 
+width: 100%; 
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+h2{
+    font-family: "League Spartan", sans-serif;
+    font-size: 2rem;
+    color: hsl(0, 100%, 100%);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+  /** //////////////////////////////////////////////////////////////////HEADER///////////////////////////////////////////////////////////////////**/
+header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px;
+    background-color: #0000006d;
+    height: 100px;  
+}
+
+.content {
+    display: flex; 
+    flex-direction: row; 
+    align-items: flex-start; 
+}
+  
+.titre-partie1 {
+    font-family: "League Spartan", sans-serif;
+    font-size: 60px;
+    color: hsl(0, 100%, 100%);
+    margin-bottom: 10px;
+}
+.ans {
+    font-family: "Quicksand", sans-serif;
+    font-size: 24px;
+    color: hsl(0, 100%, 100%);
+    display: inline;
+}
+  
+.histoire {
+    font-family: "Quicksand", sans-serif;
+    font-size: 20px;
+    color: hsl(0, 100%, 100%);
+    position: absolute;
+    left:160px;
+    font-weight: 200;
+    top:40px;
+}
+  
+
+nav ul {
+    display: flex; 
+    list-style: none;
+}
+  
+nav ul li {
+    margin: 0 15px; 
+}
+  
+  nav ul li a {
+    text-decoration: none;
+    color: hsl(0, 100%, 100%);
+    font-size: 19px;
+    font-family:"League Spartan"
+    
+}
+  
+
+  
+nav ul li a:hover {
+    color:#435146CC; 
+}
+  
+@media (max-width: 1024px){
+    nav  {
+      
+        margin:23px;
+        padding: 20px;
+    }
+    nav ul li a {
+        font-size: 1rem;
+    }
+  }
+/** //////////+++++++////////////////////+++++++/////////////////////////++++++++///////////HEADER RESPONSIVENESS ///////////////////++++++++//////////////////////++++++++//////////////////////////**/
+@media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      height: 240px;
+    }
+  
+    .content {
+      margin-bottom: 6px;
+     
+      text-align: center;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      
+      gap: 10px;
+      align-items: center;
+   
+    }
+    .titre-partie1 {
+        font-size: 1.8rem; 
+        text-align: center;
+      }
+    
+      .ans, .histoire {
+        font-size: 0.9rem; 
+       
+      }
+      .histoire{
+        position: absolute;
+        right:160px
+      }
+    
+  
+  }
+  
+  @media (max-width: 480px) {
+    .titre-partie1 {
+      font-size: 2rem;
+    }
+  
+    .ans, .histoire {
+      font-size: 1rem;
+    }
+  
+    nav ul li a {
+      font-size: 1rem;
+      padding:20px
+    }
+  }
+  @media (max-width: 320px) {
+    header {
+      flex-direction: column; 
+      align-items: center;
+      padding: 15px;
+    }
+  
+    .titre-partie1 {
+      font-size: 1.5rem;
+      text-align: center; 
+      margin-bottom: 10px;
+    }
+  
+    .ans, .histoire {
+      font-size: 0.8rem;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  
+    nav ul {
+      flex-direction: column; 
+      gap: 8px; 
+      padding: 0; 
+    }
+  
+    nav ul li a {
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 5px 0;
+    }
+  }
+  
+/** ////////////////////////////////////////////////////////////////// Table of civilisations //////////////////////////////////////////////////////////////////**/
+
+.civilisations {
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    font-family: "Quicksand", sans-serif;
+    text-align: center;
+    width: 85%;
+    margin: 80px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.civilisations h2 {
+    font-family: "League Spartan", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.civilisations h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 3px;
+    background: #435146CC;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    margin-top: 30px;
+    background-color: transparent;
+}
+
+table thead {
+    background-color: #435146CC;
+}
+
+table thead th {
+    padding: 20px;
+    font-size: 1.3rem;
+    font-family: "League Spartan", sans-serif;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+table tbody tr {
+    transform: scale(1);
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+table tbody tr:hover {
+    transform: scale(1.02);
+    background-color: rgba(67, 81, 70, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+table td {
+    padding: 25px;
+    text-align: left;
+    color: white;
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+table td:first-child {
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-left: 4px solid #435146CC;
+}
+
+table td img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+table td img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+table a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 16px;
+    border: 2px solid #435146CC;
+    background-color: transparent;
+}
+
+table a:hover {
+    background-color: #435146CC;
+    color: white;
+    box-shadow: 0 4px 12px rgba(67, 81, 70, 0.3);
+}
+
+@media (max-width: 768px) {
+    .civilisations {
+        width: 95%;
+        padding: 20px;
+        margin: 40px auto;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table, table tbody, table tr, table td {
+        display: block;
+        width: 100%;
+    }
+
+    table tbody tr {
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    table td {
+        padding: 15px;
+        font-size: 1rem;
+        text-align: center;
+        border: none;
+    }
+
+    table td:first-child {
+        border-left: none;
+        border-bottom: 2px solid #435146CC;
+        margin-bottom: 10px;
+    }
+
+    table td img {
+        width: 100%;
+        height: 160px;
+        margin: 10px 0;
+    }
+
+    table a {
+        display: inline-block;
+        margin-top: 15px;
+        width: 100%;
+    }
+}
+
+/** ////////////////////////////////////////////////////////////////// welcome section //////////////////////////////////////////////////////////////////**/
+.welcome-section {
+  padding: 20px;
+  width: 85%; 
+  margin: 80px auto; 
+  align-self: center;
+  height: auto; 
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.welcome-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  gap:100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px; 
+}
+.welcome-content h1 {
+  font-size: 2.5rem; 
+  margin: 20px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.welcome-content p {
+  font-size:larger;
+  margin: 20px;
+  max-width: 800px;
+}
+
+.welcome-button {
+  margin:20px;
+  margin-left: 20px;
+  border: none;
+  color: rgb(67, 81, 70, 0.8);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size:20px;
+  margin: 4px 2px;
+  border: 2px solid rgb(67, 81, 70, 0.8);
+  font-family: "League Spartan", sans-serif;
+}
+
+.welcome-button:hover {
+  background-color: rgb(67, 81, 70, 0.8);
+}
+
+.info-section {
+  background-color: rgba(67, 81, 70, 0.8);
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+  margin: 10px;
+  color: white;
+}
+
+.info-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.info-box p {
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.6;
+}
+.info-box i {
+  font-size: 3rem; 
+  margin-bottom: 10px;
+  color: #333;
+  display: block;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .welcome-section {
+    margin: 20px;
+  }
+
+  .welcome-content h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-content p {
+    font-size: 1rem;
+  }
+
+  .welcome-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .info-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .info-box p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-section {
+    margin: 10px;
+  }
+
+  .welcome-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-content p {
+    font-size: 0.9rem;
+  }
+
+  .welcome-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .info-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .info-box p {
+    font-size: 0.9rem;
+  }
+}
+/** ////////////////////////////////////////////////////////////////// Cards section //////////////////////////////////////////////////////////////////**/
+
+.container {
+    width: 85%; 
+    margin: 80px auto; 
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    background-color: rgba(0, 0, 0, 0.85); 
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.container-info {
+    color: white;
+    width: 45%; 
+    font-family: "League Spartan", sans-serif;
+    font-size: larger;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease; 
+}
+
+.container img {
+    width: 45%; 
+    height: auto;
+    transition: transform 0.3s ease; 
+}
+
+.button {
+    width:22%;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #435146CC;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: "League Spartan", sans-serif;
+    border: 2px solid #435146CC;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: white;
+    border-color: #435146CC;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+    }
+    
+    .container-info,
+    .container img {
+        width: 100%;
+    }
+    
+    .welcome-section,
+    .civilisations {
+        width: 95%;
+    }
+}
+
+/** ////////////////////////////////////////////////////////////////// FOOTER //////////////////////////////////////////////////////////////////**/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    background-color: #0000006d;
+    margin-top: 30px;
+    font-family: "Quicksand", sans-serif;
+  }
+  
+  .footer-content {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .footer-titre-partie1 {
+    font-size: 2rem;
+    font-family: "League Spartan";
+    color: #bcb8b8;
+    margin-bottom: 10px;
+  }
+  
+  .footer-histoire {
+    font-size: 1rem;
+    color: #bcb8b8;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .footer-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .footer-nav ul li {
+    margin: 0 15px;
+  }
+  
+  .footer-nav ul li i {
+  cursor: pointer;
+  color: #bcb8b8;
+    font-size: 3rem;
+  
+  }
+  
+  .footer-nav ul li i:hover {
+    color: #435146CC;
+  }
+  
+  .footer-search {
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+    margin-right: 10px;
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #435146CC;
+    color: white;
+    border: none;
+    font-family:'Quicksand' ;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #435146CC;
+  }
+  
+  .footer-copyright {
+    text-align: center;
+    font-size: 1rem;
+    color: #bcb8b8;
+  }
+  
+  .footer-copyright p {
+    margin: 0;
+  }
+  /* ////////////////////////////////////++++++///////++++++//////////////////////  FOOTER RESPONSIVENESS ///////////////////////////////+++++////////********+ */
+  @media (max-width: 768px) {
+    .footer-titre-partie1 {
+      font-size: 1.5rem;
+    }
+  
+    .footer-histoire {
+      font-size: 0.9rem;
+      max-width: 400px;
+    }
+  
+    .footer-nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-nav ul li {
+      margin: 10px 0;
+    }
+  
+    .footer-search {
+      flex-direction: column;
+    }
+  
+    .search-input {
+      width: 200px;
+    }
+  
+    .search-button {
+      margin-top: 10px;
+      width: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-titre-partie1 {
+      font-size: 1.2rem;
+    }
+  
+    .footer-histoire {
+      font-size: 0.8rem;
+      max-width: 350px;
+    }
+  
+    .footer-nav ul li a {
+      font-size: 1rem;
+    }
+  
+    .footer-search {
+      width: 100%;
+    }
+  
+    .search-input,
+    .search-button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .search-button {
+      margin-top: 10px;
+    }
+  }
+  /** ////////////////////////////////////////////////////////////////// END OF FOOTER PART //////////////////////////////////////////////////////////////////**/
+
+
